@@ -42,3 +42,4 @@ Under development.
     - [ ] head
     - [ ] tail
 
+- [x] Y Combinator
