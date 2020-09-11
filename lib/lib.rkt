@@ -1,10 +1,14 @@
 #lang racket
 
+(require "ycombinator.rkt")
+(provide Y)
+
 (require "booleans.rkt")
 (require "numerals.rkt")
 (require "predicates.rkt")
 (require "enum.rkt")
 
+(provide Fact)
 (provide showBool)
 (provide showNum)
 (provide IsZero)

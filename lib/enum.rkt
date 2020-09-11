@@ -1,5 +1,16 @@
 #lang racket
 
+; ----------------- for Y ---------------
+
+(provide Fact)
+
+(define Fact
+  (lambda (fac)
+      (lambda (x)
+        (if (= x 0) 
+            0
+            (+ x (fac (sub1 x)))))))
+
 ;----------------- bool -------------------
 
 (provide true false and or)
