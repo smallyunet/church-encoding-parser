@@ -5,13 +5,40 @@ I want to code an executor that can output the result of the statement written b
 
 Under development.
 
-## TODO List
+### todo list
 
 - [ ] Church numerals
     - [x] numerals
-    - [ ] plus
     - [ ] succ
+    - [ ] add
     - [ ] mult
     - [ ] exp
     - [ ] pred
-    - [ ] minus
+    - [ ] sub
+
+- [ ] Church Booleans
+    - [x] true
+    - [x] false
+    - [x] and
+    - [x] or
+    - [ ] not
+    - [ ] xor
+    - [ ] if
+
+- [ ] Predicates
+    - [x] IsZero
+    - [ ] LEQ
+    - [ ] EQ
+
+- [ ] Church pairs
+    - [ ] pair
+    - [ ] first
+    - [ ] second
+
+- [ ] List encodings
+    - [ ] nil
+    - [ ] isnil
+    - [ ] cons
+    - [ ] head
+    - [ ] tail
+
