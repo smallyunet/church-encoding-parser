@@ -5,7 +5,7 @@ I want to code an executor that can output the result of the statement written b
 
 Under development.
 
-### todo list
+### TODO List
 
 - [ ] Church numerals
     - [x] numerals
