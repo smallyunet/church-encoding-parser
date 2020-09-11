@@ -7,11 +7,11 @@ Under development.
 
 ## TODO List
 
-- [] Church numerals
+- [ ] Church numerals
     - [x] numerals
-    - [] plus
-    - [] succ
-    - [] mult
-    - [] exp
-    - [] pred
-    - [] minus
+    - [ ] plus
+    - [ ] succ
+    - [ ] mult
+    - [ ] exp
+    - [ ] pred
+    - [ ] minus
