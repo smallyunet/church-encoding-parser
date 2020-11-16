@@ -7,6 +7,7 @@
 (require "numerals.rkt")
 (require "predicates.rkt")
 (require "enum.rkt")
+(require "pairs.rkt")
 
 (provide Fact)
 (provide showBool)
@@ -14,4 +15,5 @@
 (provide IsZero)
 (provide true false and or)
 (provide zero one two three)
+(provide pair)
 
