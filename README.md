@@ -31,7 +31,7 @@ Under development.
     - [ ] EQ
 
 - [ ] Church pairs
-    - [ ] pair
+    - [x] pair
     - [ ] first
     - [ ] second
 
