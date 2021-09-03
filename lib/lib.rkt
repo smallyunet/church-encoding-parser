@@ -13,7 +13,7 @@
 (provide showBool)
 (provide showNum)
 (provide IsZero)
-(provide true false and or)
+(provide true false and or not1)
 (provide zero one two three)
 (provide pair)
 

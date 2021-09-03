@@ -13,7 +13,7 @@
 
 ;----------------- bool -------------------
 
-(provide true false and or)
+(provide true false and or not1)
 
 (define true
   (lambda (a)
@@ -35,6 +35,12 @@
   (lambda (p)
     (lambda (q)
       ((p p) q))))
+
+(define not1
+  (lambda (p)
+    (lambda (a)
+      (lambda (b)
+        ((p b) a)))))
 
 ;------------------ number -----------------
 

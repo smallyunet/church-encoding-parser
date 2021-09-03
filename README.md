@@ -1,9 +1,35 @@
 
+### Intro
+
+> I realized I couldn't understand those complex logic symbols. T_T
+
 A simple church encoding parser.
 
 I want to code an executor that can output the result of the statement written by church encoding. Maybe I get in some trouble.
 
-Under development.
+It's under development.
+
+Reference: [https://en.wikipedia.org/wiki/Church_encoding](https://en.wikipedia.org/wiki/Church_encoding)
+
+### Usage
+
+You can execute test units in the test folder just like this:
+
+```
+smallyu@smallyus-Air church-encoding-parser % racket test/testBool.rkt 
+"-------------- true false -----------------"
+#t
+#f
+#t
+#f
+"-------------- and or -----------------"
+#f
+#t
+"-------------- not -----------------"
+#f
+#t
+smallyu@smallyus-Air church-encoding-parser %
+```
 
 ### TODO List
 
@@ -21,7 +47,8 @@ Under development.
     - [x] false
     - [x] and
     - [x] or
-    - [ ] not
+    - [x] not1
+    - [ ] not2
     - [ ] xor
     - [ ] if
 
