@@ -1,6 +1,6 @@
 #lang racket
 
-(require "../lib/lib.rkt")
+(require "./parser.rkt")
 
 ((Y Fact) 1)
 ((Y Fact) 2)

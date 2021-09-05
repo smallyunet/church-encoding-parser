@@ -1,6 +1,6 @@
 #lang racket
 
-(require "../lib/lib.rkt")
+(require "./parser.rkt")
 
 (println "-------------- true false -----------------")
 
@@ -14,10 +14,13 @@
 (showBool ((and true) false))
 (showBool ((or true) false))
 
-(println "-------------- not -----------------")
+(println "-------------- not1 -----------------")
 
 (showBool (not1 true))
 (showBool (not1 false))
 
+(println "-------------- not2 -----------------")
 
+(showBool (not2 true))
+(showBool (not2 false))
 

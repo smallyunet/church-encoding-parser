@@ -1,7 +1,6 @@
 #lang racket
 
-(require "../lib/lib.rkt")
-
+(require "./parser.rkt")
 
 (println "---- number ----")
 
