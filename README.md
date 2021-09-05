@@ -1,7 +1,7 @@
 
-### Intro
+### Introduct
 
-A simple church encoding parser.
+A simple church encoding parser all in [parser.rkt](https://github.com/smallyunet/church-encoding-parser/blob/master/parser.rkt).
 
 I want to code an executor that can output the result of the statement written by church encoding. Maybe I get in some trouble.
 
@@ -14,18 +14,17 @@ Reference: [https://en.wikipedia.org/wiki/Church_encoding](https://en.wikipedia.
 You can execute test units in the test folder just like this:
 
 ```
-smallyu@smallyus-Air church-encoding-parser % racket testBool.rkt 
-"-------------- true false -----------------"
-#t
-#f
-#t
-#f
-"-------------- and or -----------------"
-#f
-#t
-"-------------- not -----------------"
-#f
-#t
+smallyu@smallyus-Air church-encoding-parser % racket testNum.rkt 
+"---- number ----"
+0
+1
+2
+3
+"---- you can write like this ----"
+0
+1
+2
+3
 smallyu@smallyus-Air church-encoding-parser %
 ```
 
@@ -46,7 +45,7 @@ smallyu@smallyus-Air church-encoding-parser %
     - [x] and
     - [x] or
     - [x] not1
-    - [ ] not2
+    - [x] not2
     - [ ] xor
     - [ ] if
 
