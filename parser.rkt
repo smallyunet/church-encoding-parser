@@ -2,14 +2,12 @@
 
 (provide Fact)
 (provide Y)
-(provide true false and or not1 not2)
-(provide zero one two three)
-(provide showBool)
-(provide showNum)
+(provide showBool true false and or not1 not2 xor if)
+(provide showNum zero one two three)
 (provide pair)
 (provide IsZero)
 
-; ----------------- for Y ---------------
+;-------- factor --------
 
 (define Fact
   (lambda (fac)
@@ -18,14 +16,19 @@
             0
             (+ x (fac (sub1 x)))))))
 
-; ----------------- Y ---------------
+;-------- y combinator --------
 
 (define Y
   (lambda (f)
     ((lambda (x) (x x))
     (lambda (x) (f (lambda (v) ((x x) v)))))))
 
-;----------------- enum -------------------
+;-------- show boolean --------
+
+(define (showBool f)
+ (apply (apply f '(#t)) '(#f)))
+
+;-------- boolean --------
 
 (define true
   (lambda (a)
@@ -57,7 +60,29 @@
   (lambda (p)
     ((p false) true)))
 
-;------------------ number -----------------
+(define xor
+  (lambda (a)
+    (lambda (b)
+      ((a (not2 b)) b))))
+
+(define if
+  (lambda (p)
+    (lambda (a)
+      (lambda (b)
+        ((p a) b)))))
+
+;-------- show number --------
+
+(define (showNum num)
+  (define times 0)
+  (define (f x)
+    (set! times (add1 times)))
+  (cond
+    [(procedure? num)
+       (showNum (num f))
+       times]))
+
+;-------- number --------
 
 (define zero
   (lambda (f)
@@ -79,23 +104,7 @@
     (lambda (x)
       (f (f (f x))))))
 
-;------------------ show boolean -----------------
-
-(define (showBool f)
- (apply (apply f '(#t)) '(#f)))
-
-;------------------ show number -----------------
-
-(define (showNum num)
-  (define times 0)
-  (define (f x)
-    (set! times (add1 times)))
-  (cond
-    [(procedure? num)
-       (showNum (num f))
-       times]))
-
-;------------------ is pair -----------------
+;-------- is pair --------
 
 (define (pair)
   (lambda (x)
@@ -103,7 +112,7 @@
       (lambda ()
         (cons x y)))))
 
-;------------------ predicate -----------------
+;-------- predicate --------
 
 (define (IsZero num)
   ((num (lambda (x) #f)) #t))

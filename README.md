@@ -39,15 +39,15 @@ smallyu@smallyus-Air church-encoding-parser %
     - [ ] pred
     - [ ] sub
 
-- [ ] Church Booleans
+- [x] Church Booleans
     - [x] true
     - [x] false
     - [x] and
     - [x] or
     - [x] not1
     - [x] not2
-    - [ ] xor
-    - [ ] if
+    - [x] xor
+    - [X] if
 
 - [ ] Predicates
     - [x] IsZero
