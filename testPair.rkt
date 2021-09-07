@@ -2,10 +2,17 @@
 
 (require "./parser.rkt")
 
-;;; where a = 7, b = 8
-(((pair) 7) 8)
+(println "---- pair ----")
+(((pair) one) two)
+(((pair) 1) 2)
 
-;;; show it
-((((pair) 7) 8))
+(println "---- first ----")
+((first) (((pair) one) two))
+(showNum ((first) (((pair) one) two)))
+((first) (((pair) 1) 2))
 
+(println "---- second ----")
+((second) (((pair) one) two))
+(showNum ((second) (((pair) one) two)))
+((second) (((pair) 1) 2))
 

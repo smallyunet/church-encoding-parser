@@ -4,10 +4,10 @@
 (provide Y)
 (provide showBool true false and or not1 not2 xor if)
 (provide showNum zero one two three)
-(provide pair)
+(provide pair first second)
 (provide IsZero)
 
-;-------- factor --------
+;;;-------- factor --------
 
 (define Fact
   (lambda (fac)
@@ -16,19 +16,19 @@
             0
             (+ x (fac (sub1 x)))))))
 
-;-------- y combinator --------
+;;;-------- y combinator --------
 
 (define Y
   (lambda (f)
     ((lambda (x) (x x))
     (lambda (x) (f (lambda (v) ((x x) v)))))))
 
-;-------- show boolean --------
+;;;-------- show boolean --------
 
 (define (showBool f)
  (apply (apply f '(#t)) '(#f)))
 
-;-------- boolean --------
+;;;-------- boolean --------
 
 (define true
   (lambda (a)
@@ -71,7 +71,7 @@
       (lambda (b)
         ((p a) b)))))
 
-;-------- show number --------
+;;;-------- show number --------
 
 (define (showNum num)
   (define times 0)
@@ -82,7 +82,7 @@
        (showNum (num f))
        times]))
 
-;-------- number --------
+;;;-------- number --------
 
 (define zero
   (lambda (f)
@@ -104,15 +104,27 @@
     (lambda (x)
       (f (f (f x))))))
 
-;-------- is pair --------
+;;;-------- is pair --------
 
 (define (pair)
   (lambda (x)
     (lambda (y)
-      (lambda ()
-        (cons x y)))))
+      (lambda (z)
+        ((z x) y)))))
 
-;-------- predicate --------
+(define (first)
+  (lambda (p)
+    (p (lambda (x)
+          (lambda (y)
+            x)))))   
+
+(define (second)
+  (lambda (p)
+    (p (lambda (x)
+          (lambda (y)
+            y)))))   
+
+;;;-------- predicate --------
 
 (define (IsZero num)
   ((num (lambda (x) #f)) #t))

@@ -54,10 +54,10 @@ smallyu@smallyus-Air church-encoding-parser %
     - [ ] LEQ
     - [ ] EQ
 
-- [ ] Church pairs
+- [x] Church pairs
     - [x] pair
-    - [ ] first
-    - [ ] second
+    - [x] first
+    - [x] second
 
 - [ ] List encodings
     - [ ] nil
