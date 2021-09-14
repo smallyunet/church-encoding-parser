@@ -3,7 +3,7 @@
 (provide Fact)
 (provide Y)
 (provide showBool true false and or not1 not2 xor if)
-(provide showNum zero one two three)
+(provide showNum zero one two three succ)
 (provide pair first second)
 (provide IsZero)
 
@@ -103,6 +103,12 @@
   (lambda (f)
     (lambda (x)
       (f (f (f x))))))
+
+(define (succ) 
+  (lambda (n)
+    (lambda (f)
+      (lambda (x)
+        (f ((n f) x))))))
 
 ;;;-------- is pair --------
 

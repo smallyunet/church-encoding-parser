@@ -16,3 +16,8 @@
 (showNum (λ (f) (λ (x) (f (f x)))))
 (showNum (λ (f) (λ (x) (f (f (f x))))))
 
+(println "---- calculations ----")
+
+(showNum ((succ) one))
+(showNum ((succ) two))
+(showNum ((succ) three))

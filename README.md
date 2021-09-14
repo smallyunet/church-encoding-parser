@@ -32,7 +32,7 @@ smallyu@smallyus-Air church-encoding-parser %
 
 - [ ] Church numerals
     - [x] numerals
-    - [ ] succ
+    - [x] succ
     - [ ] add
     - [ ] mult
     - [ ] exp
