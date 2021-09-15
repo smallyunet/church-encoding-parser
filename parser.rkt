@@ -3,7 +3,7 @@
 (provide Fact)
 (provide Y)
 (provide showBool true false and or not1 not2 xor if)
-(provide showNum zero one two three succ)
+(provide showNum zero one two three four five succ plus)
 (provide pair first second)
 (provide IsZero)
 
@@ -71,7 +71,7 @@
       (lambda (b)
         ((p a) b)))))
 
-;;;-------- show number --------
+;;;-------- number --------
 
 (define (showNum num)
   (define times 0)
@@ -81,8 +81,6 @@
     [(procedure? num)
        (showNum (num f))
        times]))
-
-;;;-------- number --------
 
 (define zero
   (lambda (f)
@@ -104,11 +102,28 @@
     (lambda (x)
       (f (f (f x))))))
 
+(define four
+  (lambda (f)
+    (lambda (x)
+      (f (f (f (f x)))))))
+
+(define five
+  (lambda (f)
+    (lambda (x)
+      (f (f (f (f (f x))))))))
+
 (define (succ) 
   (lambda (n)
     (lambda (f)
       (lambda (x)
         (f ((n f) x))))))
+
+(define (plus)
+  (lambda (m)
+    (lambda (n)
+      (lambda (f)
+        (lambda (x)
+          ((m f) ((n f) x)))))))
 
 ;;;-------- is pair --------
 

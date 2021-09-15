@@ -2,22 +2,22 @@
 
 (require "./parser.rkt")
 
-(println "---- number ----")
+(println "---- number enum ----")
 
 (showNum zero)
 (showNum one)
-(showNum two)
-(showNum three)
 
 (println "---- you can write like this ----")
 
 (showNum (λ (f) (λ (x) x)))
 (showNum (λ (f) (λ (x) (f x))))
-(showNum (λ (f) (λ (x) (f (f x)))))
-(showNum (λ (f) (λ (x) (f (f (f x))))))
 
-(println "---- calculations ----")
+(println "---- calculations succ ----")
 
 (showNum ((succ) one))
 (showNum ((succ) two))
-(showNum ((succ) three))
+
+(println "---- calculations plus ----")
+
+(showNum (((plus) one) two))
+(showNum (((plus) one) three))

@@ -32,8 +32,8 @@ smallyu@smallyus-Air church-encoding-parser %
 
 - [ ] Church numerals
     - [x] numerals
+    - [ ] plus
     - [x] succ
-    - [ ] add
     - [ ] mult
     - [ ] exp
     - [ ] pred
