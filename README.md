@@ -3,41 +3,49 @@
 
 A simple church encoding parser all in [parser.rkt](https://github.com/smallyunet/church-encoding-parser/blob/master/parser.rkt).
 
-I want to code an executor that can output the result of the statement written by church encoding. Maybe I get in some trouble.
-
-It's under development.
+I want to code an executor that can output the result of the statement written by church encoding.
 
 Reference: [https://en.wikipedia.org/wiki/Church_encoding](https://en.wikipedia.org/wiki/Church_encoding)
 
 ### Usage
 
-You can execute test units in the test folder just like this:
+You can use such as in `testNum.rkt`:
+
+```
+#lang racket
+(require "./parser.rkt")
+
+(println "---- number enum ----")
+(showNum zero)
+(showNum one)
+
+(println "---- you can write like this ----")
+(showNum (λ (f) (λ (x) x)))
+(showNum (λ (f) (λ (x) (f x))))
+```
+
+And then execute the test units:
 
 ```
 smallyu@smallyus-Air church-encoding-parser % racket testNum.rkt 
 "---- number ----"
 0
 1
-2
-3
 "---- you can write like this ----"
 0
 1
-2
-3
-smallyu@smallyus-Air church-encoding-parser %
 ```
 
 ### TODO List
 
-- [ ] Church numerals
+- [x] Church numerals
     - [x] numerals
-    - [ ] plus
+    - [x] plus
     - [x] succ
-    - [ ] mult
-    - [ ] exp
-    - [ ] pred
-    - [ ] sub
+    - [x] mult
+    - [x] exp
+    - [x] pred
+    - [x] minus
 
 - [x] Church Booleans
     - [x] true

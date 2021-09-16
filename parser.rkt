@@ -3,7 +3,7 @@
 (provide Fact)
 (provide Y)
 (provide showBool true false and or not1 not2 xor if)
-(provide showNum zero one two three four five succ plus)
+(provide showNum zero one two three four five six plus succ mult exp pred minus)
 (provide pair first second)
 (provide IsZero)
 
@@ -112,18 +112,48 @@
     (lambda (x)
       (f (f (f (f (f x))))))))
 
-(define (succ) 
+(define six
+  (lambda (f)
+    (lambda (x)
+      (f (f (f (f (f (f x)))))))))
+
+(define succ
   (lambda (n)
     (lambda (f)
       (lambda (x)
         (f ((n f) x))))))
 
-(define (plus)
+(define plus
   (lambda (m)
     (lambda (n)
       (lambda (f)
         (lambda (x)
           ((m f) ((n f) x)))))))
+
+(define mult
+  (lambda (m)
+    (lambda (n)
+      (lambda (f)
+        (lambda (x)
+          ((m (n f)) x))))))
+
+(define exp
+  (lambda (m)
+    (lambda (n)
+      (n m))))
+
+(define pred
+  (lambda (n)
+    (lambda (f)
+      (lambda (x)
+        (n (lambda (g)
+              (lambda (h)
+                (h (g f)))))))))
+
+(define minus
+  (lambda (m)
+    (lambda (n)
+      ((n pred) m))))
 
 ;;;-------- is pair --------
 
