@@ -2,7 +2,14 @@
 
 (require "./parser.rkt")
 
-(println "------------- pred --------------")
+(println "--- IsZero ---")
+(showBool (IsZero zero))
+(showBool (IsZero one))
 
-(IsZero zero)
-(IsZero one)
+(println "--- LEQ ---")
+(showBool ((LEQ zero) zero))
+(showBool ((LEQ one) zero))
+
+(println "--- EQ ---")
+(showBool ((EQ zero) zero))
+(showBool ((EQ one) zero))

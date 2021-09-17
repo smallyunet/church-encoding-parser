@@ -1,20 +1,20 @@
 #lang racket
 
-(provide Fact)
-(provide Y)
+(provide Fact Y)
 (provide showBool true false and or not1 not2 xor if)
 (provide showNum zero one two three four five six plus succ mult exp pred minus)
 (provide pair first second)
-(provide IsZero)
+(provide IsZero LEQ EQ)
+(provide nil isnil cons head tail)
 
 ;;;-------- factor --------
-
+  
 (define Fact
   (lambda (fac)
       (lambda (x)
-        (if (= x 0) 
-            0
-            (+ x (fac (sub1 x)))))))
+        (cond
+          [(zero? x) 1]
+          [else (+ x (fac (sub1 x)))]))))
 
 ;;;-------- y combinator --------
 
@@ -23,12 +23,10 @@
     ((lambda (x) (x x))
     (lambda (x) (f (lambda (v) ((x x) v)))))))
 
-;;;-------- show boolean --------
+;;;-------- boolean --------
 
 (define (showBool f)
  (apply (apply f '(#t)) '(#f)))
-
-;;;-------- boolean --------
 
 (define true
   (lambda (a)
@@ -155,27 +153,70 @@
     (lambda (n)
       ((n pred) m))))
 
-;;;-------- is pair --------
+;;;-------- predicate --------
 
-(define (pair)
+(define (IsZero num)
+  ((num (lambda (x) false)) true))
+
+(define LEQ
+  (lambda (m)
+    (lambda (n)
+      (IsZero ((minus m) n)))))
+  
+(define EQ
+  (lambda (m)
+    (lambda (n)
+      ((and ((LEQ m) n)) ((LEQ n) m)))))
+
+;;;-------- pair --------
+
+(define pair
   (lambda (x)
     (lambda (y)
       (lambda (z)
         ((z x) y)))))
 
-(define (first)
+(define first
   (lambda (p)
     (p (lambda (x)
           (lambda (y)
             x)))))   
 
-(define (second)
+(define second
   (lambda (p)
     (p (lambda (x)
           (lambda (y)
             y)))))   
 
-;;;-------- predicate --------
+;;;-------- list --------
 
-(define (IsZero num)
-  ((num (lambda (x) #f)) #t))
+(define nil
+  (lambda (c)
+    (lambda (n) n)))
+
+(define isnil
+  (lambda (l)
+    ((l (lambda (h)
+          (lambda (t) false))) true)))
+
+(define cons
+  (lambda (h)
+    (lambda (t)
+      (lambda (c)
+        (lambda (n)
+          ((c h) ((t c) n)))))))
+
+(define head
+  (lambda (l)
+    ((l (lambda (h)
+          (lambda (t) h))) false)))
+
+(define tail
+  (lambda (l)
+    (lambda (c)
+      (lambda (n)
+        ( (((l (lambda (h)
+                  (lambda (t)
+                    (lambda (g)
+                      ((g h) (t c)))))) (lambda (t) n)) ((lambda (h)
+                                                            (lambda (t) t)))) )))))

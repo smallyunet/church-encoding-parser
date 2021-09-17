@@ -57,21 +57,21 @@ smallyu@smallyus-Air church-encoding-parser % racket testNum.rkt
     - [x] xor
     - [X] if
 
-- [ ] Predicates
+- [x] Predicates
     - [x] IsZero
-    - [ ] LEQ
-    - [ ] EQ
+    - [x] LEQ
+    - [x] EQ
 
 - [x] Church pairs
     - [x] pair
     - [x] first
     - [x] second
 
-- [ ] List encodings
-    - [ ] nil
-    - [ ] isnil
-    - [ ] cons
-    - [ ] head
-    - [ ] tail
+- [x] List encodings
+    - [x] nil
+    - [x] isnil
+    - [x] cons
+    - [x] head
+    - [x] tail
 
 - [x] Y Combinator
