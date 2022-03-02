@@ -1,5 +1,5 @@
 
-### Introduct
+### Introduction
 
 A simple church encoding parser all in [parser.rkt](https://github.com/smallyunet/church-encoding-parser/blob/master/parser.rkt).
 
