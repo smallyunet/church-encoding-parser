@@ -1,15 +1,15 @@
+# Church Encoding Parser
 
-### Introduct
+## Introduction
+This repository contains a simple parser for church encoding, implemented in the [parser.rkt](https://github.com/smallyunet/church-encoding-parser/blob/master/parser.rkt) file.
 
-A simple church encoding parser all in [parser.rkt](https://github.com/smallyunet/church-encoding-parser/blob/master/parser.rkt).
+The goal is to code an executor capable of outputting the results of statements written in church encoding.
 
-I want to code an executor that can output the result of the statement written by church encoding.
+**Reference**: [Church Encoding - Wikipedia](https://en.wikipedia.org/wiki/Church_encoding)
 
-Reference: [https://en.wikipedia.org/wiki/Church_encoding](https://en.wikipedia.org/wiki/Church_encoding)
+## Usage
 
-### Usage
-
-You can use such as in `testNum.rkt`:
+To use, you can follow the example provided in the `testNum.rkt`:
 
 ```
 #lang racket
@@ -24,7 +24,7 @@ You can use such as in `testNum.rkt`:
 (showNum (λ (f) (λ (x) (f x))))
 ```
 
-And then execute the test units:
+Executing the test units will yield the following:
 
 ```
 smallyu@smallyus-Air church-encoding-parser % racket testNum.rkt 
